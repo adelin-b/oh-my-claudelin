@@ -1,0 +1,26 @@
+{
+  "name": "oh-my-claudelin",
+  "version": "0.1.0",
+  "description": "Personal modular overlay on oh-my-claudecode — composed skills via skill-x, decision-layer routing, upstream-safe.",
+  "author": {
+    "name": "Adelin Berard",
+    "url": "https://github.com/adelin-b"
+  },
+  "repository": "https://github.com/adelin-b/oh-my-claudelin",
+  "homepage": "https://github.com/adelin-b/oh-my-claudelin",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "overlay",
+    "skill-x",
+    "composed-skills",
+    "oh-my-claudecode"
+  ],
+  "skills": [
+    "./skills/browser-best/",
+    "./skills/memory-best/",
+    "./skills/review-best/",
+    "./skills/docs-best/"
+  ]
+}

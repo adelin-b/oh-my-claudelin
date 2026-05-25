@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+.omc/
+*.log
+.cache/
+dist/
+build/
+.env
+.env.*
+!.env.example
+manifest/*.lock
+.skill-x-state/

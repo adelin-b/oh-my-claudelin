@@ -1,0 +1,61 @@
+{
+  "$schema": "./sync.config.schema.json",
+  "description": "Parents of composed skills in this overlay. Each entry tells scripts/sync-parents.mjs where to check for upstream drift. Composed skills are NOT regenerated automatically — drift is recorded in manifest/<parent>.json and the user is prompted to re-run skill-compose in-context. The `cmd`+`args` shape avoids shell-string injection in sync-parents.mjs.",
+  "parents": {
+    "claude-in-chrome": {
+      "kind": "claude-mcp",
+      "id": "claude-in-chrome",
+      "notes": "MCP server. No upstream version probe — relies on the active Claude session."
+    },
+    "proofshot": {
+      "kind": "npm",
+      "package": "proofshot",
+      "cmd": "npm",
+      "args": ["view", "proofshot", "version"],
+      "homepage": "https://github.com/AmElmo/proofshot"
+    },
+    "agent-browser": {
+      "kind": "npm",
+      "package": "agent-browser",
+      "cmd": "npm",
+      "args": ["view", "agent-browser", "version"],
+      "homepage": "https://github.com/vercel-labs/agent-browser"
+    },
+    "mex-agent": {
+      "kind": "npm",
+      "package": "mex-agent",
+      "cmd": "npm",
+      "args": ["view", "mex-agent", "version"],
+      "homepage": "https://github.com/theDakshJaitly/mex"
+    },
+    "ctx-mode": {
+      "kind": "github-release",
+      "repo": "mksglu/context-mode",
+      "cmd": "gh",
+      "args": ["api", "repos/mksglu/context-mode/releases/latest", "--jq", ".tag_name"]
+    },
+    "oh-my-claudecode": {
+      "kind": "github-release",
+      "repo": "Yeachan-Heo/oh-my-claudecode",
+      "cmd": "gh",
+      "args": ["api", "repos/Yeachan-Heo/oh-my-claudecode/releases/latest", "--jq", ".tag_name"],
+      "tracked_skills": ["wiki", "code-reviewer", "verifier", "document-specialist", "git-master", "executor", "architect"]
+    },
+    "context7": {
+      "kind": "claude-mcp",
+      "id": "plugin:context7:context7"
+    },
+    "opensrc": {
+      "kind": "github-release",
+      "repo": "vercel-labs/opensrc",
+      "cmd": "gh",
+      "args": ["api", "repos/vercel-labs/opensrc/releases/latest", "--jq", ".tag_name"]
+    },
+    "auto-memory": {
+      "kind": "claude-builtin",
+      "id": "auto-memory",
+      "notes": "Claude Code builtin. No version surface."
+    }
+  },
+  "allowedCmds": ["npm", "gh", "node", "claude"]
+}

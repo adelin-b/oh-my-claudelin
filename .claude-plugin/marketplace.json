@@ -1,0 +1,20 @@
+{
+  "name": "oh-my-claudelin",
+  "owner": "adelin-b",
+  "description": "Composed skills overlay for oh-my-claudecode. Decision-layer routing across overlapping tools, kept fresh via skill-x.",
+  "categories": [
+    {
+      "id": "decision-layer",
+      "name": "Decision layer",
+      "description": "Composed skills that pick the right tool when multiple overlap."
+    }
+  ],
+  "plugins": [
+    {
+      "name": "oh-my-claudelin",
+      "category": "decision-layer",
+      "tags": ["overlay", "composed", "skill-x", "decision-layer"],
+      "keywords": ["browser", "memory", "review", "docs", "mex"]
+    }
+  ]
+}

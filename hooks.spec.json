@@ -1,0 +1,24 @@
+{
+  "name": "oh-my-claudelin",
+  "description": "Hooks for the overlay. Generator pattern borrowed from skill-x. Run `bash scripts/gen-hooks.sh` after edits.",
+  "hooks": [
+    {
+      "id": "drift-check-on-session-start",
+      "description": "On session start, report any composed skill whose parent drifted since last_synced.",
+      "events": ["sessionStart"],
+      "run": "node scripts/sync-parents.mjs --quiet --report",
+      "blocking": false
+    },
+    {
+      "id": "feature-map-edit-warning",
+      "description": "When FEATURE-MAP.md is edited, remind the user to run audit + recompose.",
+      "events": ["postToolUse"],
+      "match": {
+        "tool": "Edit|Write|MultiEdit",
+        "filePattern": "**/FEATURE-MAP.md"
+      },
+      "run": "echo 'FEATURE-MAP.md edited. Run: bash scripts/doctor.sh && consider re-composing affected skills.'",
+      "blocking": false
+    }
+  ]
+}
