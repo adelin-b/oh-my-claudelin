@@ -21,6 +21,7 @@
     "./skills/browser-best/",
     "./skills/memory-best/",
     "./skills/review-best/",
-    "./skills/docs-best/"
+    "./skills/docs-best/",
+    "./skills/add-tool/"
   ]
 }
